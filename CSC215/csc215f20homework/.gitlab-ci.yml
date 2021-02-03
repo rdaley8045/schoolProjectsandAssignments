@@ -1,0 +1,36 @@
+variables:
+     course: csc215
+     professor_email: "Schrader, Roger L. <Roger.Schrader@sdsmt.edu>"
+     #labta_email: "Schrader, Roger <Roger.Schrader@gmail.com>"
+
+     
+# ----------------- Do Not Edit Below This Line -------------------------------
+before_script:
+  - c:\bin\env2019.ps1
+  - set-variable -name testscript  -value "c:\scripts\basepart.ps1" -Scope local
+
+stages:
+  - test
+
+grade:
+  allow_failure: false
+  stage: test
+  tags:
+    - csc215
+  script:
+    - invoke-expression $testscript
+    - if( $LASTEXITCODE -ne 0 ) { exit 1 }
+      
+      
+      
+      
+#- if( ! (Test-Path -Path $solpath) ) { write-host "Invalid Solution Name"; exit 1 }
+#- cd $solution
+#- if( $LASTEXITCODE -ne 0 ) { exit 1 }
+      
+      
+#    - invoke-expression $buildscript
+#    - if( $LASTEXITCODE -ne 0 ) { exit 1 }
+#    - invoke-expression $testscript
+#    - if( $LASTEXITCODE -ne 0 ) { exit 1 }
+

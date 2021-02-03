@@ -1,0 +1,24 @@
+variables:
+     course: csc150
+     professor_email: "De Castro, Daniel <Daniel.DeCastro@sdsmt.edu>" 
+     labta_email: "Akoh, Rosemary <rosemary.akoh@mines.sdsmt.edu>"
+     #labta_email: "Egermier, Isaac <Isaac.Egermier@mines.sdsmt.edu>" 
+     #labta_email: "Pallas, Terry <Terry.Pallas@mines.sdsmt.edu>" 
+     
+# ----------------- Do Not Edit Below This Line -------------------------------
+before_script:
+  - c:\bin\env2017.ps1
+  - set-variable -name testscript  -value "c:\scripts\base.ps1" -Scope local
+
+stages:
+  - test
+
+grade:
+  allow_failure: false
+  stage: test
+  tags:
+    - csc150
+  script:
+    - invoke-expression $testscript
+    - if( $LASTEXITCODE -ne 0 ) { exit 1 }
+      
