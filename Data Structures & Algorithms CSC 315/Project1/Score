@@ -1,0 +1,24 @@
+*  Choose a name for the player (put a Name file in your repo)
+*  Code compiles
+*  Code runs and plays the game
+*  Player averages better than the random player
+*  Player averages better than the greedy player
+-  All team members show repository activity
+--------------------------------------------------------------------------------
+Total % : 5/5  commit [a3ee385a07df] used
+
+Notes:
+
+   * Simply updating a text file does not meet the requirement
+     of 'All team members show repository activity'.
+    
+   * If the team is doing paired or team programming, that must be documented
+     in the commit logs.  I.E. [paired programming] in the commit message
+
+   * Projects do not, necessarily, require that all team members receive the
+     same grade.  I reserve the right to assign different grades for each
+     member of a team.
+
+   * Player is working so far, so good, keep an eye on the upcoming 
+     checkpoint requirements and the performance of the greedy player as it
+     will improve over time.

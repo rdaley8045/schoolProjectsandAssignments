@@ -1,0 +1,9 @@
+rm results.dat
+
+for count in $(seq 1 100)
+do
+   echo $count
+   ./console | grep -v -i Ending >> results.dat
+done
+
+perl ./avgScores.pl < results.dat
