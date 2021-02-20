@@ -1,9 +1,12 @@
+
 #ifndef __PLAYER_H
 #define __PLAYER_H
 #include <list>
 #include "board.h"
 #include <string>
 #include <algorithm>
+#include <stdlib.h>
+#include <time.h>
 
 class Player
 {
@@ -12,7 +15,7 @@ public:
    Player ();
    ValidMove makeMove(const Board);
 private:
-   ValidMove bestMove(Board,int);
+   ValidMove bestMove(Board);
 
 
 };
