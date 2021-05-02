@@ -1,0 +1,149 @@
+  Correctly named repository and weekly directory (wa5)
+  Correctly named working file (hashTable.cpp)
+  Correctly named class name (HashTable)
+  Code Compiles without errors or warnings
+  Simple Tests Pass
+  Complex Tests Pass
+  Insert works
+  Remove works
+  Rehash works
+  [] works
+  Performance within expected range
+  
+Point Deductions:
+  Binary files in the repo
+  Insert has growth > average O(1)
+  Memory Leaks / Violations      (e.g. valgrind --leak-check=full tests)
+  Inconsistent code formatting
+  No internal comments
+-------------------------------------------------------------------------------
+Total:  10/15
+
+Notes:
+
+   * Your rehash isn't doubling the size of the table, this is causing
+     excessive rehashes.
+ 
+   * You have the following code:
+
+    if (hashValue < 0)
+        hashValue += capacity;
+
+    Just like Kevin.  1) Don't share code 2) hashValue is a size_t which is
+    unsigned.  The above code is useless.
+
+   * Watch the walkthrough for this assignment to see an incremental way
+     to approach this, and other, problems.
+
+   * The length of the lists are huge, way more than the hash function would
+     indicate.  Did you test the hashTable in isolation?
+ 
+Performance:
+Tom Sawyer
+Rehashing:: Load Factor = 0.75 new table size = 541
+Rehashing:: Load Factor = 0.750462 new table size = 619
+Rehashing:: Load Factor = 0.751212 new table size = 709
+Rehashing:: Load Factor = 0.750353 new table size = 823
+Rehashing:: Load Factor = 0.750911 new table size = 953
+Rehashing:: Load Factor = 0.750262 new table size = 1109
+Rehashing:: Load Factor = 0.750225 new table size = 1289
+Rehashing:: Load Factor = 0.750194 new table size = 1493
+Rehashing:: Load Factor = 0.750167 new table size = 1741
+Rehashing:: Load Factor = 0.750144 new table size = 2029
+Rehashing:: Load Factor = 0.750123 new table size = 2357
+Rehashing:: Load Factor = 0.750106 new table size = 2753
+Rehashing:: Load Factor = 0.750091 new table size = 3209
+Rehashing:: Load Factor = 0.750078 new table size = 3739
+Rehashing:: Load Factor = 0.750201 new table size = 4349
+Rehashing:: Load Factor = 0.750057 new table size = 5087
+Rehashing:: Load Factor = 0.750147 new table size = 5953
+Rehashing:: Load Factor = 0.750042 new table size = 6949
+Rehashing:: Load Factor = 0.750036 new table size = 8123
+Rehashing:: Load Factor = 0.750092 new table size = 9497
+Rehashing:: Load Factor = 0.750026 new table size = 11113
+Rehashing:: Load Factor = 0.750022 new table size = 12983
+Rehashing:: Load Factor = 0.750058 new table size = 15173
+Rehashing:: Load Factor = 0.750016 new table size = 17749
+Rehashing:: Load Factor = 0.750014 new table size = 20753
+Rehashing:: Load Factor = 0.750012 new table size = 24281
+Rehashing:: Load Factor = 0.75001 new table size = 28411
+Rehashing:: Load Factor = 0.750026 new table size = 33223
+Rehashing:: Load Factor = 0.750023 new table size = 38873
+Rehashing:: Load Factor = 0.750006 new table size = 45481
+Rehashing:: Load Factor = 0.750005 new table size = 53201
+Rehashing:: Load Factor = 0.750005 new table size = 62233
+Rehashing:: Load Factor = 0.750004 new table size = 72817
+Rehashing:: Load Factor = 0.750003 new table size = 85229
+Rehashing:: Load Factor = 0.750003 new table size = 99733
+Rehashing:: Load Factor = 0.750003 new table size = 116731
+Rehashing:: Load Factor = 0.750006 new table size = 136607
+Rehashing:: Load Factor = 0.750005 new table size = 159871
+Rehashing:: Load Factor = 0.750005 new table size = 187091
+Rehashing:: Load Factor = 0.750004 new table size = 218971
+Rehashing:: Load Factor = 0.750003 new table size = 256279
+Rehashing:: Load Factor = 0.750003 new table size = 299951
+../../Grading/tom.txt Insert time: 0.336674
+../../Grading/tom.txt Insert []  : 0.123149
+../../Grading/tom.txt Find time: 0.0118031
+../../Grading/tom.txt Remove time: 2.75303
+../../Grading/tom.txt MaxListLen : 5066
+Load Factor (should be 0.0%): 0%
+ 
+Performance:
+King Jame's Bible
+Rehashing:: Load Factor = 0.75 new table size = 541
+Rehashing:: Load Factor = 0.750462 new table size = 619
+Rehashing:: Load Factor = 0.751212 new table size = 709
+Rehashing:: Load Factor = 0.750353 new table size = 823
+Rehashing:: Load Factor = 0.750911 new table size = 953
+Rehashing:: Load Factor = 0.750262 new table size = 1109
+Rehashing:: Load Factor = 0.750225 new table size = 1289
+Rehashing:: Load Factor = 0.750194 new table size = 1493
+Rehashing:: Load Factor = 0.750167 new table size = 1741
+Rehashing:: Load Factor = 0.750144 new table size = 2029
+Rehashing:: Load Factor = 0.750123 new table size = 2357
+Rehashing:: Load Factor = 0.750106 new table size = 2753
+Rehashing:: Load Factor = 0.750091 new table size = 3209
+Rehashing:: Load Factor = 0.750078 new table size = 3739
+Rehashing:: Load Factor = 0.750201 new table size = 4349
+Rehashing:: Load Factor = 0.750057 new table size = 5087
+Rehashing:: Load Factor = 0.750147 new table size = 5953
+Rehashing:: Load Factor = 0.750042 new table size = 6949
+Rehashing:: Load Factor = 0.750036 new table size = 8123
+Rehashing:: Load Factor = 0.750092 new table size = 9497
+Rehashing:: Load Factor = 0.750026 new table size = 11113
+Rehashing:: Load Factor = 0.750022 new table size = 12983
+Rehashing:: Load Factor = 0.750058 new table size = 15173
+Rehashing:: Load Factor = 0.750016 new table size = 17749
+Rehashing:: Load Factor = 0.750014 new table size = 20753
+Rehashing:: Load Factor = 0.750012 new table size = 24281
+Rehashing:: Load Factor = 0.75001 new table size = 28411
+Rehashing:: Load Factor = 0.750026 new table size = 33223
+Rehashing:: Load Factor = 0.750023 new table size = 38873
+Rehashing:: Load Factor = 0.750006 new table size = 45481
+Rehashing:: Load Factor = 0.750005 new table size = 53201
+Rehashing:: Load Factor = 0.750005 new table size = 62233
+Rehashing:: Load Factor = 0.750004 new table size = 72817
+Rehashing:: Load Factor = 0.750003 new table size = 85229
+Rehashing:: Load Factor = 0.750003 new table size = 99733
+Rehashing:: Load Factor = 0.750003 new table size = 116731
+Rehashing:: Load Factor = 0.750006 new table size = 136607
+Rehashing:: Load Factor = 0.750005 new table size = 159871
+Rehashing:: Load Factor = 0.750005 new table size = 187091
+Rehashing:: Load Factor = 0.750004 new table size = 218971
+Rehashing:: Load Factor = 0.750003 new table size = 256279
+Rehashing:: Load Factor = 0.750003 new table size = 299951
+Rehashing:: Load Factor = 0.750003 new table size = 351061
+Rehashing:: Load Factor = 0.750001 new table size = 410857
+Rehashing:: Load Factor = 0.750001 new table size = 480881
+Rehashing:: Load Factor = 0.750001 new table size = 562841
+Rehashing:: Load Factor = 0.75 new table size = 658753
+Rehashing:: Load Factor = 0.75 new table size = 771049
+Rehashing:: Load Factor = 0.75 new table size = 902483
+Rehashing:: Load Factor = 0.750001 new table size = 1056323
+Rehashing:: Load Factor = 0.750001 new table size = 1236397
+Rehashing:: Load Factor = 0.75 new table size = 1447153
+Rehashing:: Load Factor = 0.75 new table size = 1693859
+Rehashing:: Load Factor = 0.75 new table size = 1982627
+Rehashing:: Load Factor = 0.75 new table size = 2320627
+Rehashing:: Load Factor = 0.75 new table size = 2716249
