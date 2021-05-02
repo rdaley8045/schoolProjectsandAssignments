@@ -1,0 +1,4 @@
+## Documentation
+The program is functional, however there are some imperfections. One of the most notable of these problems is that one can draw lines onto the image, however they cannot be removed, as if they become part of the image once they are applied. Additionally, it is possible to increase and decrease the image compression, it was impossible to revert the image to its original format. Also, if one were to increase or decrease the image resolution the number of lines were multiplied making the image unreadable. 
+
+We noticed the more compressed the image became the the less tree nodes it took to represent the trees and the less bytes were used.

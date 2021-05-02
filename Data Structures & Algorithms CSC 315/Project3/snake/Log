@@ -1,0 +1,170 @@
+April 6:
+    //Download the start up code from the server
+    //Made a new repository  called (csc315_spr2021_snake)
+    //Got the startup code comiling and running. (Have to make sure 
+        that Xming is running prior to WSL start up)
+    //Made first commit of the start up code to the repository
+    
+    Compiling instructions:
+        % chmod +x avgScores.pl
+        % export LD_LIBRARY_PATH=.
+        % make driver           // build the bulk testing / no graphic driver
+        % make snake            // build the graphic version
+
+April 7:
+    //Started to review the basic players code to see what improvement can be Made
+        to the player. However it looks like all it does is take in the position of the 
+        food and the head of the snake and performs basic up, down, left, and right moves inorder
+        to get to the location of the food. While ok for a basic player I feel that that 
+        my new player will need to treat the map as a maze and take into consideration not only the
+        location of the snakes head and food. But all the location of the body of the snake and 
+        any obsitacal that may be in the way of the snake. 
+    //Created two bash file to make multiple runs of the game using the driver version. 
+    //Started to research possible solution for the problem.
+        **First possible solution is to use a Dijkstra Path
+        **Second possible solution is to use an AStar Path
+    ??? Need to check with Dr. Hinker about how he would like for the new player to be built
+        and how many file we can build.
+
+    *** Application file builds the board enviroment. Do not need to play around with anything
+        here. 
+    *** Biconnected file finds any articulation nodes in a graph. Used to verify that a game
+        is solvable when obstacles are generated.
+    *** CC file counts the number of connected components in a graph. This helps to verify if a game
+        is solvable 
+    *** Defies file provided a list of helpful definitions for the game. Very helpful.
+    *** Playfield file is the game manger for the player. Its the function that places the food
+        on the field and moves the snake around the map.
+    *** SnakeGraph file is generic graph classes. Creates a unweighted graph with no edge list
+
+April 8:
+    ??? Checked with Dr. Hinker about the files and he talked about deleting the code for the player class
+        information.
+    //Performed further research into the different methods of solving the solution
+        and discovered that the Dijkstra Path method while good would not provide me with the most
+        optimum solution. However the AStar Path method with the addition of a BSF done at the end 
+        of the AStar looks like it will produce an optimum solution.
+    //Need to allow users to access the height and width of the grid so that an adjacency list from.
+
+    !!! Started to build bfs Path Class. I need to figure out how to process the infromation form the graph as 
+    a 2d grid. Need to figure out where to pull my infromation from. Should I pull it from the Playfield file 
+    or do I need to take the infromation from the snakeGraph file. (Need to bounce some ideas off of the others)
+
+
+    
+    TODO: Need to build a AStar path Class. 
+    TODO: Need to build a BSF path Class.
+    TODO: Modify the player.cpp file to make use of the AStar path finder. 3
+
+
+April 9:
+
+    !!! Y increase going down. 
+    !!! Need to scan the grid to build a new graph
+    !!! Turn the grid into a graph
+    !!! Don't make changes to snakeGraph Class
+
+    //Deleted bfsPath class so that it can be rewritten.
+
+April 10:
+
+    //Added Graph Class to the program.
+
+April 12:
+
+    //Fixed graph class to take in the grid produced by the playfield class and produce a graph.
+        !!! Used Code provided by Dr. Hinker's WA7 walk through. 
+    //Added BFS Class from the WA9. Code provided by Dr. Hinker's WA9 assignement.
+    TODO: Need to figure out how to implement the BFS into the player class. 
+
+April 15:
+
+    //figured out how to convert grid coordinates into vertice coordinates.
+    TODO: Still need to figure out how to make the moves along a bfs path.
+
+April 17:
+
+    //Deleted graph classes that I built because the graph classes that I built 
+    is the same as the snakeGraph class that was previous build
+    //Updated player class to make moves that the bfsPath deteremined.
+    //Got player class to make the move and got a score higher than the 
+    base player that was provided.
+
+    TODO: Need to build A* class.
+
+April 18:
+
+    //Started word on A* classes {Used code that was provided in A* Slides}
+    //Need to add a few additional function to the the A* classes.
+    //Starting to look at wether I should pass in the grid to the function.
+
+April 19:
+
+    //Deteremined that the most effective way to get A* working is to build a weighted graph.
+    //Obtained Edge class function and code from WA10.
+    
+    TODO: Need to build a Edge class
+    TODO: Need to build weighted Graph class
+    TODO: Work on A* class after building Edge and Weighted Graph Class.
+
+    //Put A* plans on hold currently. Looking at a way to use the BFS class and a coil 
+    algrorithem to make an opening for the snake. 
+
+April 20:
+
+    //Started work on a coiling algorithm that will make the snake move until it has no further 
+    places to move. 
+
+April 21:
+
+    //Made a few small tweaks to my week coiling algorithm. Need to determine a way to get the 
+    most number of steps in before hitting the tail or getting stuck next to a way.
+
+April 23:
+
+    //Rebuilt Astar function and attempted to get it working. However I am unable to get the 
+    the snake to move with it. Need to investigate why this is not working correctly. 
+    //Man do I feel like an Idiot for not knowing!!!
+
+April 25:
+
+    //Need to work out a different coiling method. I need something that will coil the snake if 
+    it can not find a BFS path to somewhere out side of the snakes path. look at the one of the 
+    4 edges possibly. 
+     
+April 26:
+
+    //Started working on a DFS Class.
+
+April 27: 
+    
+    //Implemented DFS Class however I still get the same scores need to figure out better 
+    method of combining all of the functions.
+
+April 28:
+
+    //Still having issues with finding the right combination of functions. 
+
+April 29:
+
+    //I made some progress with the finding the right combination however I am still stuggling 
+    to find the right combination. Though I realize that I have all the tools I need.
+    //So I need to figure out a way so that the snake fallows it tail using a DFS until it get close to food. 
+    
+April 30:
+
+    //Last day of for me to work on this project.
+    //Had a thought to add a padded boarder around the grid in the first and last row and column. 
+
+    TODO: Build a function that adds a boarder and a function that removes the boarder.
+    TODO: Reapply the DFS Class to the player classes
+    TODO: Figure out a way to always have a path to the tail of the snake. This can use the boarder.
+
+    // Figure out how to add padding to the snake.
+    //Created new player class that uses an AStar, BFS, and DFS graph class. 
+    //Deleted the functionality that tracked the end of the snake tail. 
+    //Final score where 34.96 average with a max score of 112 for a 20x16 field with obstacles
+    //Final score for 19x20 field with no obsitacles 77.72 average with a max score of 150.
+
+    //Program pushed up for grading. 
+    

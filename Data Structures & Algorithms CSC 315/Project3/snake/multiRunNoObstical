@@ -1,0 +1,15 @@
+export LD_LIBRARY_PATH=.
+
+make driver
+
+for count in $(seq 1 100)
+    do
+    echo $count
+    ./driver 13 16 FALSE >> Out.dat
+done
+
+perl ./avgScores.pl < Out.dat
+
+rm Out.dat
+
+make clean
